@@ -148,8 +148,18 @@ export default function Home() {
 
       <Suspense
         fallback={
-          <div className="country-listing-grid" aria-live="polite">
-            Loading countries and destinations...
+          <div className="featured-loading" role="status" aria-label="Loading featured places">
+            <p className="eyebrow"><span /> PLACES TO DISCOVER</p>
+            <div className="featured-loading-grid" aria-hidden="true">
+              {Array.from({ length: 3 }, (_, index) => (
+                <div className="featured-loading-card" key={index}>
+                  <span className="featured-loading-image" />
+                  <span className="featured-loading-line" />
+                  <span className="featured-loading-line featured-loading-line-short" />
+                </div>
+              ))}
+            </div>
+            <span className="visually-hidden">Loading countries and destinations…</span>
           </div>
         }
       >

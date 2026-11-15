@@ -752,6 +752,70 @@ button:focus-visible {
   gap: 25px;
 }
 
+.featured-loading {
+  padding: 70px 7%;
+  background: var(--guzo-ivory);
+}
+
+.featured-loading > .eyebrow {
+  color: var(--guzo-muted);
+}
+
+.featured-loading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.featured-loading-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 13px;
+  padding: 12px 12px 20px;
+  border: 1px solid rgba(32, 40, 36, 0.08);
+  border-radius: 5px;
+  background: #fffefa;
+}
+
+.featured-loading-image,
+.featured-loading-line {
+  display: block;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #e9e6dc 25%, #f4f1e9 50%, #e9e6dc 75%);
+  background-size: 200% 100%;
+  animation: featured-loading-shimmer 1.6s ease-in-out infinite;
+}
+
+.featured-loading-image {
+  aspect-ratio: 1.45;
+}
+
+.featured-loading-line {
+  width: 72%;
+  height: 12px;
+}
+
+.featured-loading-line-short {
+  width: 46%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@keyframes featured-loading-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
 @media (max-width: 900px) {
   .featured-destinations-section {
     padding-inline: 5%;
@@ -770,5 +834,21 @@ button:focus-visible {
   .featured-destinations-grid {
     grid-template-columns: 1fr;
     gap: 22px;
+  }
+
+  .featured-loading {
+    padding: 55px 6%;
+  }
+
+  .featured-loading-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-loading-image,
+  .featured-loading-line {
+    animation: none;
   }
 }
