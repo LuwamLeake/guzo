@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./Footer.css"
+import "./Footer.css";
 
 export default function Footer() {
   return (
@@ -53,8 +53,7 @@ export default function Footer() {
           GUZO<span>.</span>
         </Link>
 
-        © 2026 GUZO. All rights reserved.
-
+        <p>© 2026 GUZO. All rights reserved.</p>
 
         <a className="footer-back-top" href="#top">
           Back to top <span aria-hidden="true">↑</span>
